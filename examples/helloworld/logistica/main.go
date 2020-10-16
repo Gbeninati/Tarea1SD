@@ -167,7 +167,7 @@ func comunicarFinanzas(data string){
 	defer ch.Close()
 
     //Se declaran las colas a utilizar, en este caso TestQueue
-	q, err := ch.QueueDeclare(
+	_, err = ch.QueueDeclare(
 		"TestQueue",
 		false,
 		false,
