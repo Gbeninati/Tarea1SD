@@ -37,7 +37,7 @@ import (
 
 const (
 	port = ":50051"
-	address     = "localhost:50052"
+	address     = "10.6.40.225:50052"
 	defaultName = "world"
 )
 
@@ -153,7 +153,7 @@ func (s *server) SeguirPaquete(ctx context.Context, in *pb.RespuestaPedido) (*pb
 
 //Funcion que recibe un string con todos los datos de un paquete y lo envia a finanzas para que realice el calculo del balance final
 func comunicarFinanzas(data string){
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	conn, err := amqp.Dial("amqp://guest:guest@10.6.40.227:5672/")
 	if err != nil {
 		fmt.Println("Failed Initializing Broker Connection")
 		panic(err)
