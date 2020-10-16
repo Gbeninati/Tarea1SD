@@ -65,7 +65,7 @@ func obtenerBalance(datos string){
 
 func main() {
 	//Se realiza la conexion con RabbitMQ
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	conn, err := amqp.Dial("amqp://guest:guest@10.6.40.227:5672/")
 	if err != nil {
 		fmt.Println("Failed Initializing Broker Connection")
 		panic(err)
