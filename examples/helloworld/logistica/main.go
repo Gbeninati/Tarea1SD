@@ -69,7 +69,7 @@ func conCaminon(id string, seguimiento string, tipo string, valor string, intent
 	if err != nil {
 				log.Fatalf("could not greet: %v", err)
 	}
-	log.Printf("El estado actual del paquete es: %s", res.GetSeguimiento())
+	//log.Printf("El estado actual del paquete es: %s", res.GetSeguimiento())
 
 }
 
@@ -195,7 +195,7 @@ func comunicarFinanzas(data string){
 	if err != nil {
 		fmt.Println(err)
 	}
-    log.Printf("Pedido %s enviado a finanzas\n", data[2])
+    //log.Printf("Pedido %s enviado a finanzas\n", data[2])
 }
 
 //Actualiza el estado y el # de intentos del pedido con el numero de seguimiento recibido por caminones
@@ -208,7 +208,7 @@ func (s *server) ActualizarEstado(ctx context.Context, in *pb.NuevoEstado) (*pb.
 	if(in.GetEstado() == "Recibido" || in.GetEstado() == "No Recibido"){
 		var datos string
 		datos = strings.Join(pedidos[in.GetId()], ",")
-		fmt.Printf(datos)
+		//fmt.Printf(datos)
 		go comunicarFinanzas(datos)
 	}
 	return &pb.RespuestaPedido{Seguimiento: ""}, nil
